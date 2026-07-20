@@ -1,0 +1,159 @@
+@import "../omarchy/current/theme/waybar.css";
+@define-color recording #a55555;
+@define-color notification #a55555;
+@define-color Spotify #a6e3a1;
+
+/*==========================================================================
+ * GLOBAL
+ * =========================================================================*/
+* {
+  background-color: @background;
+  color: @foreground;
+
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font', "Symbols Nerd Font", sans-serif;
+  font-size: 16px;
+}
+
+/*============================================================================
+ * WAYBAR
+ * ===========================================================================*/
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+/*============================================================================
+ * WORKSPACES
+ * ===========================================================================*/
+#workspaces button {
+  all: initial;
+  padding: 0 12px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+/*==============================================================================
+ * MODULES
+ * ============================================================================*/
+
+/*=====================================================================
+ * CENTER MODULES
+ * ====================================================================*/
+#custom-update {
+  font-size: 10px;
+}
+
+#clock {
+  margin: 0 10px;
+  padding: 0 6px;
+  font-weight: 600;
+}
+#clock:hover{
+  opacity: .8;
+}
+
+#custom-weather {
+  margin: 0 7.5px;
+  transition: all .2s;
+  font-size: 24px;
+}
+#custom-weather:hover{
+  opacity: .8;
+}
+
+#custom-weather.unavailable {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  min-width: 12px;
+  margin-left: 5px;
+  margin-right: 0;
+  font-size: 10px;
+  padding-bottom: 1px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: @recording;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: @notification;
+}
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 7.5px;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
+}
+#mpris {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#mpris.playing {
+  color:  @Spotify/* verde tipo Spotify, ajústalo a tu tema */
+}
+
+/*==============================================================================
+ * RIGHT MODULES
+ * =============================================================================*/
+#cpu,
+#battery,
+#pulseaudio,
+#custom-omarchy,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#tray {
+  margin-right: 16px;
+}
+
+#bluetooth {
+  margin-right: 17px;
+}
+
+#network {
+  margin-right: 13px;
+}
+
+#custom-expand-icon {
+  margin-right: 18px;
+}
+#memory,
+#custom-gpu-temp {
+  min-width: 11px;
+  margin: 0 7.5px;
+}
+
+/*================================================================================
+ * TOOLTIP
+ * ===============================================================================*/
+tooltip {
+  padding: 6px;
+  border-radius: 8px;
+}
