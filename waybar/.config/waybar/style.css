@@ -1,4 +1,8 @@
 @import "../omarchy/current/theme/waybar.css";
+
+/*============================================================================
+ * PALETA DE COLORES
+ * ===========================================================================*/
 @define-color recording #a55555;
 @define-color notification #a55555;
 @define-color Spotify #a6e3a1;
@@ -14,18 +18,22 @@
   border-radius: 0;
   min-height: 0;
   font-family: 'JetBrainsMono Nerd Font', "Symbols Nerd Font", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /*============================================================================
  * WAYBAR
  * ===========================================================================*/
 .modules-left {
-  margin-left: 8px;
+  margin-left: 10px;
+}
+
+.modules-center{
+  padding: 0 6px;
 }
 
 .modules-right {
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 /*============================================================================
@@ -36,10 +44,12 @@
   padding: 0 12px;
   margin: 0 1.5px;
   min-width: 9px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #workspaces button.empty {
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 /*==============================================================================
@@ -58,17 +68,15 @@
   padding: 0 6px;
   font-weight: 600;
 }
-#clock:hover{
+#clock:hover,
+#custom-weather:hover{
   opacity: .8;
 }
 
 #custom-weather {
   margin: 0 7.5px;
-  transition: all .2s;
-  font-size: 24px;
-}
-#custom-weather:hover{
-  opacity: .8;
+  transition: opacity 0.2s ease;
+  font-size: 22px;
 }
 
 #custom-weather.unavailable {
@@ -86,7 +94,7 @@
 #custom-notification-silencing-indicator {
   min-width: 12px;
   margin-left: 5px;
-  margin-right: 0;
+  margin-right: 5px;
   font-size: 10px;
   padding-bottom: 1px;
 }
@@ -98,6 +106,7 @@
 #custom-idle-indicator.active,
 #custom-notification-silencing-indicator.active {
   color: @notification;
+  font-size: 16px;
 }
 
 #custom-voxtype {
@@ -109,12 +118,17 @@
   color: #a55555;
 }
 #mpris {
-  min-width: 12px;
-  margin: 0 7.5px;
+  margin: 0 10px;
+  padding: 0 5px;
 }
 
 #mpris.playing {
-  color:  @Spotify/* verde tipo Spotify, ajústalo a tu tema */
+  color:  @Spotify;/* verde tipo Spotify, ajústalo a tu tema */
+  font-weight: 600;
+}
+
+#mpris:hover{
+  opacity: 0.85;
 }
 
 /*==============================================================================
@@ -154,6 +168,13 @@
  * TOOLTIP
  * ===============================================================================*/
 tooltip {
-  padding: 6px;
+  padding: 8px 12px;
+  border: 1px solid alpha (@foreground, 0.25);
   border-radius: 8px;
+  transition: 200ms;
+}
+
+tooltip label {
+  color: @foreground;
+  font-size: 14px;
 }

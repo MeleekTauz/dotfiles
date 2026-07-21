@@ -81,8 +81,8 @@
     "stopped": "■"
   },
   "max-length": 35,
-  "dynamic-order": ["title", "artist"],
-  "tooltip-format": "{player}: {dynamic}",
+  "dynamic-order": ["title"],
+  "tooltip-format": "{title} - {artist}\n{album}",
   "on-click": "playerctl play-pause",
   "on-click-right": "playerctl next",
   "on-click-middle": "playerctl previous",
